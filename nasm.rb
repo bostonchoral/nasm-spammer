@@ -59,7 +59,7 @@ say("Processing, this may take a while...")
 n = CSV.open('nasm.csv', 'w') do |csv|
   NasmParser.new.process(u,p) do |row|
     csv << row
-    say("\r<%= HighLine.Style(:erase_line).code %> #{row} ")
+    say("\r<%= HighLine.Style(:erase_line).code %> #{row[0]} ")
   end
 end
 
