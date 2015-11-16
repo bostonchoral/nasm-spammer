@@ -6,7 +6,7 @@ class NasmParser < Mechanize
   HOME = 'http://nasm.arts-accredit.org/'
   SCHOOL = /<h2>(.*)<\/h2>/
   SITE = /Web Site: .*">(.*)<\/a>/
-  CONTACT = /<br>([^<]]*) ([^<]]*), <i>(.*)<\/i>.*E-Mail *([^<]]*) *<br>/
+  CONTACT = /<br>([^<]]*) ([^<]]*), <i>(.*)<\/i>.*E-Mail *(.*) *<br>/
 
   def process(user, password)
     user_agent_alias = 'Mac Safari'
