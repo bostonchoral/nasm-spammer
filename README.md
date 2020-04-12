@@ -53,7 +53,7 @@ the session is remote controlled. You must click "Continue Session" to let the s
 will stop.
 
 The script will take several hours to run. It intentionally pauses after fetching each page, to make sure that it
-doesn't overwhelm the NASM web site. During this time, you should leave your Mac plugged in.
+doesn't overwhelm the NASM web site. During this time, you should leave your Mac plugged in. You'll see the script's progress with messages in the Terminal window, and you'll see it fetching new pages in the remote-controlled web browser about twice a minute or so.
 
 If the script gets interrupted, just type `./run` to run it again - it will resume from wherever it left off, so you won't lose progress.
 
