@@ -25,7 +25,7 @@ First, follow these instructions to download the code and install prerequisites:
 > ```
 >      DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020.
 > ```
-> You can ignore this message. (Apple has ignored it for years; why shouldn't you?)
+> You can ignore this message, even if it's after 2020. (Apple has ignored it for years; why shouldn't you?)
 
 
 Second, you need to enable remote control for Safari (by default, Safari doesn't allow scripts to control it, which is a good thing). To do it:
