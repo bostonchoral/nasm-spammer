@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Use "caffeinate" to prevent the Mac from going to sleep while the script runs.
+caffeinate -d ./nasm-spammer.py

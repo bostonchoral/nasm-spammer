@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Install pip, the Python package installer.
+python -m ensurepip --user
+
+# Upgrade pip to the latest version.
+python -m pip install -U pip --user
+
+# Install Selenium, the Python web browser controller.
+python -m pip install selenium --user
+
+
