@@ -16,15 +16,16 @@ First, follow these instructions to download the code and install prerequisites:
 1. Open the "Terminal" Application (to find it, you can click the magnifying glass icon in the top right corner of the screen and type "terminal".)
 2. Type (or copy & paste) the following lines, with each line followed by the Return/Enter key.
 
+```
      git clone https://github.com/bostonchoral/nasm-spammer.git
      cd nasm-spammer
      ./install
-
+```
 
 NOTE: You might see the message:
-
+```
       *DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020.*
-
+```
 You can ignore this message. (Apple has ignored it for years; why shouldn't you?)
 
 
@@ -41,8 +42,8 @@ Running
 -------
 
 1. Open the "Terminal" application.
-2. Type "cd nasm-spammer" and hit Return/Enter.
-3. Type "./run" and hit Return/Enter.
+2. Type `cd ~/nasm-spammer` and hit Return/Enter. (If you're already in the same terminal window you used before, you don't have to do this.)
+3. Type `./run` and hit Return/Enter.
 
 The script will ask you for the NASM username (i.e. the email address associated with the account) and password. Get these from someone who knows them.
 
@@ -55,7 +56,7 @@ will stop.
 The script will take several hours to run. It intentionally pauses after fetching each page, to make sure that it
 doesn't overwhelm the NASM web site. During this time, you should leave your Mac plugged in.
 
-If the script gets interrupted, just type "./run" to run it again - it will resume from wherever it left off, so you won't lose progress.
+If the script gets interrupted, just type `./run` to run it again - it will resume from wherever it left off, so you won't lose progress.
 
 If your Mac gets turned off and you lose the terminal window, just repeat the steps in this section to resume.
 
@@ -69,19 +70,19 @@ You can find the file by going to your home folder, then to the "nasm-spammer" f
 
 If you don't know how to get to your home folder:
 
-     * Click the Finder icon on your Dock.
-     * Open the "Go" menu and choose "Home".
-     * Double-click the "nasm-spammer" folder in that window. The "contacts.tsv" file should be in it.
-     * You can drag the "contacts.tsv" file into Excel's "Open" dialog box (or Google Sheets' "Upload" dialog box) to open it.
+* Click the Finder icon on your Dock.
+* Open the "Go" menu and choose "Home".
+* Double-click the "nasm-spammer" folder in that window. The "contacts.tsv" file should be in it.
+* You can drag the "contacts.tsv" file into Excel's "Open" dialog box (or Google Sheets' "Upload" dialog box) to open it.
 
 Each row lists the following information in columns (separated by tab characters):
 
-    * The name of the institution.
-    * The URL of the institution's page on the NASM site.
-    * The URL of the institution's own web page.
-    * The name of the contact person at the institution.
-    * The person's title and department (if listed).
-    * The person's email address.
+* The name of the institution.
+* The URL of the institution's page on the NASM site.
+* The URL of the institution's own web page.
+* The name of the contact person at the institution.
+* The person's title and department (if listed).
+* The person's email address.
 
 If there is more than one contact person for a given institution, they will appear in multiple rows for that institution.
 
