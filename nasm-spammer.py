@@ -90,11 +90,10 @@ class nasm_scraper(object):
             password = getpass.getpass("NASM Password: ")
         return user, password
     
-    def login(self, user=None, password=None):
+    def login(self, user, password):
         '''Log in to NASM.'''
 
         # Go to the login page.
-        user, password = self. get_user_and_password(user, password)
         url = os.path.join(site, 'login')
         logging.info('Logging into url[{}] as user[{}]'.format(url, user))
         self.browser.get(url)
