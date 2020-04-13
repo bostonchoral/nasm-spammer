@@ -16,6 +16,7 @@ import time
 import traceback
 
 # Need to "pip install selenium" (done in ./install)
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver import Safari
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -55,16 +56,19 @@ def utf_8_encoder(unicode_data):
 
 
 class nasm_scraper(object):
-    def __init__(self, browser, browser_name):
+    def __init__(self, browser_constructor, browser_name):
         self.preexisting_schools = set()
-        
-        logging.info('Starting a {} browser session...'.format(browser_name))
         self.browser_name = browser_name
-        self.browser = browser()
-        logging.info('{} is active.'.format(browser_name))
+        self.browser_constructor = browser_constructor
+        self.browser = None
+
+    def start_browser(self):
+        logging.info('Starting a {} browser session...'.format(self.browser_name))
+        self.browser = self.browser_constructor()
+        logging.info('{} is active.'.format(self.browser_name))
 
     def wait_up_to(self, seconds):
-        return WebDriverWait(self.browser, seconds)
+        return WebDriverWait(self.browser, seconds, ignored_exceptions=(NoSuchElementException,StaleElementReferenceException))
         
     def get_user_and_password(self, user=None, password=None):
         '''
@@ -86,11 +90,10 @@ class nasm_scraper(object):
             password = getpass.getpass("NASM Password: ")
         return user, password
     
-    def login(self, user=None, password=None):
+    def login(self, user, password):
         '''Log in to NASM.'''
 
         # Go to the login page.
-        user, password = self.get_user_and_password(user, password)
         url = os.path.join(site, 'login')
         logging.info('Logging into url[{}] as user[{}]'.format(url, user))
         self.browser.get(url)
@@ -213,12 +216,16 @@ class nasm_scraper(object):
         return result
         
     def main(self):
-        self.login()
-        if not os.path.exists(catalog_file_name):
-            self.download_catalog()
-        self.scan_preexisting_output_file()
-        self.loop_catalog()
-        
+        user, password = self.get_user_and_password()
+        self.start_browser()
+        try:
+            self.login(user, password)
+            if not os.path.exists(catalog_file_name):
+                self.download_catalog()
+            self.scan_preexisting_output_file()
+            self.loop_catalog()
+        finally:
+            self.browser.quit()
 
 
 if __name__ == '__main__':
