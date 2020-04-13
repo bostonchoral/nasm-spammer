@@ -53,11 +53,18 @@ the session is remote controlled. You must click "Continue Session" to let the s
 will stop.
 
 The script will take several hours to run. It intentionally pauses after fetching each page, to make sure that it
-doesn't overwhelm the NASM web site. During this time, you should leave your Mac plugged in. You'll see the script's progress with messages in the Terminal window, and you'll see it fetching new pages in the remote-controlled web browser about twice a minute or so.
+doesn't overwhelm the NASM web site. During this time, you should leave your Mac plugged in. 
+You'll see the script's progress with messages in the Terminal window, and you'll see it fetching new pages in the remote-controlled 
+web browser about twice a minute or so.
 
-If the script gets interrupted, just type `./run` to run it again - it will resume from wherever it left off, so you won't lose progress.
+To stop the script, bring the Terminal window to the front and hold the Control key while pressing "c".
+If the script gets interrupted for any reason, just type `./run` in the Terminal window to run it again - it will resume from wherever it left off, so you won't lose progress.
 
-If your Mac gets turned off and you lose the terminal window, just repeat the steps in this section to resume.
+If your Mac gets turned off and you lose the terminal window, just repeat the steps at the top of this section to resume.
+
+**DEALING WITH ERRORS:** If the script stops because of an error, try to run it again using `./run`. Chances are, it was just a blip, and it'll pick up from where it left off.
+If the script stopped with the browser window open, you need to close the browser window before it will work again. Safari will ask if you really want to stop the remote-controlled session;
+click the "Stop Session" button to confirm.
 
 
 Output
